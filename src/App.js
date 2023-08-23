@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-import { MOODS } from "./moodConfig";
+import { MOODS, SONGS } from "./moodConfig";
 
 import SubTitleText from "./components/text/SubTitleText";
 import TitleText from "./components/text/TitleText";
 import MoodsDisplay from "./components/mood/MoodsDisplay";
+import Playlist from "./components/playlist/Playlist";
 
 import Container from "@mui/material/Container";
 
@@ -25,6 +26,14 @@ function App() {
           moods={MOODS}
           moodSelection={moodSelection}
         />
+        {moodSelection ? (
+          <Playlist
+            songs={SONGS[moodSelection]}
+            moodSelection={moodSelection}
+          />
+        ) : (
+          <></>
+        )}
       </Container>
     </div>
   );
