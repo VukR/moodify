@@ -1,4 +1,5 @@
 import SongItem from "./SongItem";
+import AddSongItem from "./AddSongItem";
 
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -39,6 +40,7 @@ function Playlist({ deleteSong, songs, moodSelection }) {
           index={index}
         />
       ))}
+      <AddSongItem />
     </Box>
   );
 }
