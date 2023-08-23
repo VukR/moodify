@@ -1,7 +1,13 @@
+import TitleText from './components/text/TitleText';
+
+import Container from '@mui/material/Container';
+
 function App() {
   return (
     <div className="App">
-      blah
+      <Container>
+        <TitleText />
+      </Container>
     </div>
   );
 }
