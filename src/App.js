@@ -11,9 +11,16 @@ import Container from "@mui/material/Container";
 
 function App() {
   const [moodSelection, setMoodSelection] = useState(null);
+  const [songs, setSongs] = useState(SONGS);
 
   function handleMoodClick(mood) {
     moodSelection === mood ? setMoodSelection(null) : setMoodSelection(mood);
+  }
+
+  function deleteSong(index) {
+    const tmpSongs = { ...songs };
+    tmpSongs[moodSelection].splice(index, 1);
+    setSongs(tmpSongs);
   }
 
   return (
@@ -28,7 +35,8 @@ function App() {
         />
         {moodSelection ? (
           <Playlist
-            songs={SONGS[moodSelection]}
+            deleteSong={deleteSong}
+            songs={songs[moodSelection]}
             moodSelection={moodSelection}
           />
         ) : (

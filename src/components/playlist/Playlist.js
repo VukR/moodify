@@ -15,7 +15,7 @@ function PlaylistHeader({ moodSelection }) {
   );
 }
 
-function Playlist({ songs, moodSelection }) {
+function Playlist({ deleteSong, songs, moodSelection }) {
   return (
     // Margin - on extra small screens, playlist fits the entire width.
     // Otherwise take away space from left and right sides
@@ -31,7 +31,13 @@ function Playlist({ songs, moodSelection }) {
       <PlaylistHeader moodSelection={moodSelection} />
       <Divider sx={{ borderBottomWidth: 5 }} />
       {songs.map((song, index) => (
-        <SongItem key={index} name={song.name} artist={song.artist} />
+        <SongItem
+          key={index}
+          deleteSong={deleteSong}
+          name={song.name}
+          artist={song.artist}
+          index={index}
+        />
       ))}
     </Box>
   );
