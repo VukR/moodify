@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ListItem from "@mui/material/ListItem";
 
-function AddSongItem() {
+function AddSongItem({ handleDialogOpen }) {
   return (
     <ListItem>
       <Box
@@ -13,7 +13,10 @@ function AddSongItem() {
           justifyContent: "center",
         }}
       >
-        <IconButton sx={{ padding: 0, borderRadius: 0 }}>
+        <IconButton
+          onClick={() => handleDialogOpen()}
+          sx={{ padding: 0, borderRadius: 0 }}
+        >
           <Typography sx={{ marginRight: 1 }}>Add a song</Typography>
           <ControlPointIcon />
         </IconButton>

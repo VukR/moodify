@@ -16,7 +16,7 @@ function PlaylistHeader({ moodSelection }) {
   );
 }
 
-function Playlist({ deleteSong, songs, moodSelection }) {
+function Playlist({ deleteSong, handleDialogOpen, songs, moodSelection }) {
   return (
     // Margin - on extra small screens, playlist fits the entire width.
     // Otherwise take away space from left and right sides
@@ -40,7 +40,7 @@ function Playlist({ deleteSong, songs, moodSelection }) {
           index={index}
         />
       ))}
-      <AddSongItem />
+      <AddSongItem handleDialogOpen={handleDialogOpen} />
     </Box>
   );
 }
