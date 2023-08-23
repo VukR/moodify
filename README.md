@@ -11,7 +11,7 @@ The app was created with `node v18.17.1` and `npm 6.14.4`
 1. Clone the repo to a local directory
 2. cd into the `moodify` project directory
 3. `npm install` to install depdencies
-4. `npm start` to launch the application
+4. `npm start` to launch the application - will use default port 3000, otherwise will ask you to switch ports and automatically handle it for you.
 
 ### Comments
 
